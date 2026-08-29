@@ -101,10 +101,31 @@
             cursor: pointer;
             width: 100%;
             margin-top: 1rem;
+            transition: opacity 0.2s ease;
         }
 
         .btn:hover {
             opacity: 0.9;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .mini-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .feature-box {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
         }
     </style>
 </head>
@@ -113,10 +134,10 @@
     <header>
         <div class="logo">GOLD CORRIDOR</div>
         <nav>
-            <a href="#marketplace">Marketplace</a>
-            <a href="#tracking">Fleet Tracking</a>
-            <a href="#escrow">Escrow Services</a>
-            <a href="#login">Login</a>
+            <a href="#marketplace" class="nav-link">Marketplace</a>
+            <a href="#tracking" class="nav-link">Fleet Tracking</a>
+            <a href="#escrow" class="nav-link">Escrow Services</a>
+            <a href="#login" class="nav-link">Login</a>
         </nav>
     </header>
 
@@ -145,6 +166,78 @@
             </div>
         </div>
     </div>
+
+    <div class="section" id="tracking">
+        <h2>Fleet Tracking</h2>
+        <div class="mini-grid">
+            <div class="feature-box">
+                <h3>Route Status</h3>
+                <p>Chirundu route: 92% on schedule</p>
+                <button class="btn secondary-btn">View Live Route</button>
+            </div>
+            <div class="feature-box">
+                <h3>Driver Check-In</h3>
+                <p>6 drivers active across 4 countries</p>
+                <button class="btn secondary-btn">Track Driver</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="escrow">
+        <h2>Escrow Services</h2>
+        <div class="mini-grid">
+            <div class="feature-box">
+                <h3>Protected Payments</h3>
+                <p>Funds are safeguarded until delivery verification.</p>
+                <button class="btn secondary-btn">Open Escrow</button>
+            </div>
+            <div class="feature-box">
+                <h3>Dispute Help</h3>
+                <p>Resolve shipment issues with verified documentation.</p>
+                <button class="btn secondary-btn">Review Case</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="login">
+        <h2>Login</h2>
+        <div class="feature-box">
+            <p>Access your trade dashboard, orders, and escrow reports.</p>
+            <button class="btn secondary-btn">Login to Gold Corridor</button>
+        </div>
+    </div>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                const targetId = this.getAttribute('href');
+                if (!targetId || !targetId.startsWith('#')) return;
+
+                event.preventDefault();
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    alert('Opening: ' + this.textContent.trim());
+                }
+            });
+        });
+
+        const actionButtons = document.querySelectorAll('.btn');
+        actionButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const label = this.textContent.trim();
+                const section = this.closest('.feature-box, .card');
+                const title = section ? section.querySelector('h3, .card-header')?.textContent?.trim() || 'This action' : 'This action';
+
+                this.textContent = 'Request sent';
+                this.disabled = true;
+                this.style.opacity = '0.8';
+
+                alert(title + ' was selected. Gold Corridor is processing your request.');
+            });
+        });
+    </script>
 
 </body>
 </html>
