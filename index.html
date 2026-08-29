@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Corridor | Cross-Border SADC E-Commerce & Freight</title>
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-navy: #1A2530;
+            --light-bg: #F4F6F8;
+            --border-color: #E2E8F0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--dark-navy);
+        }
+
+        header {
+            background-color: var(--dark-navy);
+            color: #FFFFFF;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-gold);
+        }
+
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--dark-navy), #2C3E50);
+            color: #FFFFFF;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: var(--primary-gold);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .card-header {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--primary-gold);
+            color: var(--dark-navy);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .btn {
+            background-color: var(--primary-gold);
+            color: var(--dark-navy);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">GOLD CORRIDOR</div>
+        <nav>
+            <a href="#marketplace">Marketplace</a>
+            <a href="#tracking">Fleet Tracking</a>
+            <a href="#escrow">Escrow Services</a>
+            <a href="#login">Login</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Cross-Border SADC Trade Engine</h1>
+        <p>Buy, sell, and ship seamlessly across Zimbabwe, Zambia, Mozambique, and Malawi.</p>
+    </section>
+
+    <div class="container">
+        <h2>Featured Marketplace Listings</h2>
+        <div class="grid" id="marketplace">
+            <div class="card">
+                <span class="badge">Origin: Zimbabwe 🇿🇼</span>
+                <div class="card-header">Agricultural Machinery Parts</div>
+                <p>Escrow Protected | Managed Carriage via Chirundu Border</p>
+                <p><strong>Price: $450.00 USD</strong></p>
+                <button class="btn">Buy with Gold Corridor Escrow</button>
+            </div>
+
+            <div class="card">
+                <span class="badge">Origin: Zambia 🇿🇲</span>
+                <div class="card-header">Commercial Textile Supplies</div>
+                <p>Escrow Protected | Managed Carriage via Nyamapanda Border</p>
+                <p><strong>Price: $1,200.00 USD</strong></p>
+                <button class="btn">Buy with Gold Corridor Escrow</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
